@@ -18,7 +18,7 @@ def startfile(path):
 
 
 def assure_dirs():
-    pathlib.Path(f"{pathlib.Path.home()}", ".local", "hamza", "videos").mkdir(
+    pathlib.Path.home().joinpath(".local", "hamza", "videos").mkdir(
         parents=True, exist_ok=True
     )
 
@@ -92,8 +92,8 @@ def watch():
     video = get_random_video()
 
     vid_path = str(
-        pathlib.Path(
-            pathlib.Path.home(), ".local", "hamza", "videos", f"{video['video_id']}.mp4"
+        pathlib.Path.home().joinpath(
+            ".local", "hamza", "videos", f"{video['video_id']}.mp4"
         )
     )
 
